@@ -74,10 +74,7 @@
     "win": {
       "target": [
         "nsis"
-      ],
-      "sign": "./sign.js",
-      "signingHashAlgorithms": null,
-      "certificateFile": null
+      ]
     },
     "linux": {
       "target": [
