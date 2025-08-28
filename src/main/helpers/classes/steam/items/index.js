@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const VDF = require('@node-steam/vdf');
 const axios = require('axios');
+const { app } = require('electron');  // Added for writable userData path
 
 // Updated to CS2 repo paths
 const itemsLink =
@@ -9,8 +10,8 @@ const itemsLink =
 const translationsLink =
   'https://raw.githubusercontent.com/SteamDatabase/GameTracking-CS2/master/game/csgo/pak01_dir/resource/csgo_english.txt';
 
-// Ensure backup directory exists relative to this file
-const backupDir = path.join(__dirname, 'itemsBackupFiles');
+// Ensure backup directory exists in writable userData path (fixes ENOTDIR in packaged app)
+const backupDir = path.join(app.getPath('userData'), 'Casemove/itemsBackupFiles');
 if (!fs.existsSync(backupDir)) {
   fs.mkdirSync(backupDir, { recursive: true });
 }

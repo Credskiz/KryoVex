@@ -1,6 +1,7 @@
 import { getValue, setValue } from './settings';
 import fs = require('fs');
 import path = require('path');
+import { app } from 'electron';  // Added for writable userData path
 
 import axios from 'axios';
 import { currency } from './currency';
@@ -60,8 +61,8 @@ let currencyCodes = {
   47: 'RON',
 };
 
-// Ensure backup directory exists relative to this file
-const backupDir = path.join(__dirname, 'backup');
+// Ensure backup directory exists in writable userData path (fixes ENOTDIR in packaged app)
+const backupDir = path.join(app.getPath('userData'), '/backup');
 if (!fs.existsSync(backupDir)) {
   fs.mkdirSync(backupDir, { recursive: true });
 }
