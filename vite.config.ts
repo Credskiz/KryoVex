@@ -86,7 +86,7 @@ export default defineConfig(({ mode }) => {
     },
     optimizeDeps: {
       holdUntilCrawlEnd: false,
-      // Keep this list tight: each entry is esbuild'd before HTTP "ready". Chart.js and dnd
+      // Keep this list tight: each entry is pre-bundled (Rolldown) before HTTP "ready". Chart.js and dnd
       // load on-demand with their lazy routes (smaller cold start; first visit may pre-bundle).
       include: [
         'react',
@@ -99,10 +99,7 @@ export default defineConfig(({ mode }) => {
         'redux-persist/es/storage',
         '@headlessui/react',
       ],
-      esbuildOptions: {
-        target: 'esnext',
-        legalComments: 'none',
-      },
+      // Vite 8+ uses Rolldown for dep optimization; `esbuildOptions` is deprecated (see migration guide).
     },
     css: {
       devSourcemap: false,
