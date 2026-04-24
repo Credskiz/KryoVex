@@ -10,7 +10,7 @@
 
 | Layer | KryoVex (this repo) |
 | --- | --- |
-| **Runtime** | **Node 20+**, **npm 10+** (`package.json` → `engines`), **Electron 37.x**, **React 19.x** |
+| **Runtime** | **Node 20+**, **npm 10+** (`package.json` → `engines`), **Electron 41.x**, **React 19.x** |
 | **Main / preload** | **[tsup](https://tsup.egoist.dev/)** — ESM main (`.mjs`), CJS preload (`.cjs`); prod output in `release/app/dist/main` |
 | **Renderer** | **[Vite 7.x](https://vitejs.dev/)**, **Tailwind CSS v4**, **`eslint.config.mjs`**, **Jest** + **ts-jest** |
 | **Packaging** | **electron-builder** — Windows NSIS + portable; macOS DMG + ZIP; Linux `.deb` + AppImage; publish target **Credskiz/KryoVex** |
