@@ -73,7 +73,7 @@ Some flows use a one-time token from Steam (e.g. [clientjstoken](https://steamco
 ## Built with
 
 - **Node.js** 20+ and **npm** 10+ (`package.json` → `engines`)
-- **Electron** 37.x, **React** 19.x, **Tailwind CSS** 4.x
+- **Electron** 41.x, **React** 19.x, **Tailwind CSS** 4.x
 
 ---
 
